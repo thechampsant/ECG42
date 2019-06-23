@@ -12,9 +12,7 @@ def hello():
 
 @app.route('/health')
 def shorDist():
-    temp = request.json
-    print("Source: " + temp["source"])
-    print("Destination: " + temp["destination"])
+    
     
     class Graph():
         def __init__(self):
@@ -105,9 +103,9 @@ def shorDist():
         
         return path
 
-    x = dijsktra(graph, temp["source"], temp["destination"])
+    x = dijsktra(graph, 'A', 'S')
     print(x)
-    return json.dumps(x)
+    return 'ok'
 
 
 if __name__ == "__main__":
