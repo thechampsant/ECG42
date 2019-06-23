@@ -6,11 +6,8 @@ import json
 
 app = Flask(__name__)
 
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
-    with open('result.json') as f:
-    file_data = json.load(f)
+
+
 
 
 
@@ -28,6 +25,8 @@ def myABC():
 
 @app.route('/store')
 def myXYZ():
+    with open('result.json') as f:
+    file_data = json.load(f)
     mongo = PyMongo(app, uri="mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs")
     y = mongo.db.sensorTest.insert_many(file_data)
     print(y)
@@ -140,4 +139,6 @@ def shorDist():
     return json.dumps(x)
 
 
-
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
