@@ -7,7 +7,7 @@ import json
 app = Flask(__name__)
   
 app.config["MONGO_URI"]=os.environ.get('MONGO_URL')
-mongo = PyMongo(app)
+#mongo = PyMongo(app)
 
 @app.route("/xx")
 def hello():
