@@ -33,7 +33,7 @@ def myXYZ():
 
 @app.route("/xx")
 def hello():
-    return "Hello from Python!"
+    return file_data
 
 
 
