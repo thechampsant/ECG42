@@ -19,11 +19,7 @@ with open('result.json') as f:
     
 myList = []
 
-@app.route('/store')
-def myXYZ():
-    y = mongo.db.sensorTest.insert_many(file_data)
-    print(y)
-    return 'ok'
+
 
 @app.route('/health')
 def shorDist():
