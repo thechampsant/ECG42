@@ -1,6 +1,7 @@
 import os
 from flask import Flask, request
 from collections import defaultdict
+from flask_pymongo import PyMongo
 import json    
 app = Flask(__name__)
   
@@ -9,6 +10,9 @@ app = Flask(__name__)
 def hello():
     return "Hello from Python!"
 
+app.config["MONGO_URI"]="mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs"
+
+mongo = PyMongo(app)  
 
 
 @app.route('/health')
