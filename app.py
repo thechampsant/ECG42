@@ -7,16 +7,18 @@ import json
 app = Flask(__name__)
   
 app.config["MONGO_URI"]=os.environ.get('MONGO_URL')
-mongo = PyMongo(app)
+
 
 with open('result.json') as f:
     file_data = json.load(f)
 
-myList = []
+
 
 
 @app.route('/fetch')
 def myABC():
+    mongo = PyMongo(app)
+    myList = []
     x = mongo.db.sensorTest.find({"accelorometerx":{"$gt":70},"IRsensor":{"$gt":11}})
     print(x)
     for res in x:
@@ -27,6 +29,7 @@ def myABC():
 
 @app.route('/store')
 def myXYZ():
+    mongo = PyMongo(app)
     y = mongo.db.sensorTest.insert_many(file_data)
     print(y)
     return 'ok'
