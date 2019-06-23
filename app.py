@@ -6,7 +6,7 @@ import json
 
 app = Flask(__name__)
   
-app.config["MONGO_URI"]=os.environ.get('MONGO_URL')
+app.config["MONGO_URI"]=os.environ.get('mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs')
 
 
 with open('result.json') as f:
