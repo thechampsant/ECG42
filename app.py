@@ -6,9 +6,11 @@ import json
 
 app = Flask(__name__)
 
-with open('result.json') as f:
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
+    with open('result.json') as f:
     file_data = json.load(f)
-
 
 
 
@@ -138,6 +140,4 @@ def shorDist():
     return json.dumps(x)
 
 
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
+
