@@ -5,10 +5,6 @@ from flask_pymongo import PyMongo
 import json    
 
 app = Flask(__name__)
-  
-app.config['MONGO_DBNAME'] = 'heroku_pqsw7hfs'
-app.config['MONGODB_URI']='mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs'
-
 
 with open('result.json') as f:
     file_data = json.load(f)
@@ -18,7 +14,7 @@ with open('result.json') as f:
 
 @app.route('/fetch')
 def myABC():
-    mongo = PyMongo(app)
+    mongo = PyMongo(app, uri="mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs")
     myList = []
     x = mongo.db.sensorTest.find({"accelorometerx":{"$gt":70},"IRsensor":{"$gt":11}})
     print(x)
@@ -30,7 +26,7 @@ def myABC():
 
 @app.route('/store')
 def myXYZ():
-    mongo = PyMongo(app)
+    mongo = PyMongo(app, uri="mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs")
     y = mongo.db.sensorTest.insert_many(file_data)
     print(y)
     return 'ok'
