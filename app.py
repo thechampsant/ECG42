@@ -2,7 +2,6 @@ import os
 from flask import Flask,request, render_template
 from collections import defaultdict
 from flask_pymongo import PyMongo
-from pymongo import MongoClient
 import json    
 
 
@@ -14,8 +13,8 @@ app = Flask(__name__)
 @app.route('/xx')
 def hello():
     uri = "mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs"
-    client = MongoClient(uri)
-
+    app.config["MONGO_URI"] = uri
+    mongo = PyMongo(app)
     return 'file_data'
 
 @app.route('/mainpage')
