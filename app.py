@@ -9,13 +9,14 @@ import json
 
 app = Flask(__name__)
 
+client = MongoClient('mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs')
+db = client['heroku_pqsw7hfs']
 
 
-
-@app.route('/xx')
+@app.route('/store')
 def hello():
-    client = MongoClient('mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs')
-    db = client['heroku_pqsw7hfs']
+#    client = MongoClient('mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs')
+#    db = client['heroku_pqsw7hfs']
 #    post = {"author": "Mike",
 #            "text": "My first blog post!",
 #            "tags": ["mongodb", "python", "pymongo"],
