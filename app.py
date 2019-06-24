@@ -15,8 +15,11 @@ app = Flask(__name__)
 def hello():
     client = MongoClient('mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs')
     db = client['heroku_pqsw7hfs']
-    if db:
-        return 'working'
+#    if db:
+#        return 'working'
+    collection = db['test-collection']
+    if collection:
+        return 'collection working'
     return 'ok'
         
     
