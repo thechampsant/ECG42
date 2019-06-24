@@ -23,7 +23,7 @@ def hello():
             "tags": ["mongodb", "python", "pymongo"],
             "date": datetime.datetime.utcnow()}
     posts = db.posts
-    post_id = posts.insert_one(file_data).inserted_id
+    post_id = posts.insert_one(post).inserted_id
     
     return 'ok'
 
