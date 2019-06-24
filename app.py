@@ -38,12 +38,12 @@ def myABC():
 #    if db:
 #        return 'db working'
     x = db.posts.find({"accelorometerx":{"$gt":70},"IRsensor":{"$gt":11}})
-    if x:
-        return 'x created'
-    print(x)
+#    if x:
+#        return 'x created'
+#    print(x)
     for res in x:
-        print(res)
         myList.append(res)
+        
     return json.dumps(myList)
 
 
