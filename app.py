@@ -3,7 +3,8 @@ from flask import Flask,request, render_template
 from collections import defaultdict
 import json    
 
-app = Flask(__name__, static_folder='/templates')
+app = Flask(__name__)
+app._static_folder = os.path.abspath("static/")
 
 
 
@@ -12,13 +13,14 @@ app = Flask(__name__, static_folder='/templates')
 def hello():
     return 'file_data'
 
-@app.route('/tuna')
+@app.route('/mainpage')
 def tuna():
     return render_template("project.html")
-app.route('/tuna/<name>')
-def tunax(name):
-    return render_template(name)
 
+@app.route('/static/<path:filename>')
+def serve_static(filename):
+    root_dir = os.path.dirname(os.getcwd())
+    return send_from_directory(os.path.join(root_dir, 'static', 'js'),   filename)   
 
 @app.route('/health')
 def shorDist():
