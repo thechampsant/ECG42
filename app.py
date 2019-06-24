@@ -3,6 +3,7 @@ from flask import Flask,request, render_template
 from collections import defaultdict
 from flask_pymongo import PyMongo
 from pymongo import MongoClient
+import datetime
 import json    
 
 
@@ -15,11 +16,12 @@ app = Flask(__name__)
 def hello():
     client = MongoClient('mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs')
     db = client['heroku_pqsw7hfs']
-#    if db:
-#        return 'working'
-    collection = db['test-collection']
-    if collection:
-        return 'collection working'
+    post = {"author": "Mike",
+            "text": "My first blog post!",
+            "tags": ["mongodb", "python", "pymongo"],
+            "date": datetime.datetime.utcnow()}
+    posts = db.posts
+    post_id = posts.insert_one(post).inserted_id
     return 'ok'
         
     
