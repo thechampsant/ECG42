@@ -25,11 +25,10 @@ def hello():
     with open('result.json') as f:
         file_data = json.load(f)
         
-    if file_data:
-        return json.dumps(file_data)
+    
     
     posts = db.posts
-    post_id = posts.insert_one(file_data).inserted_id
+    post_id = posts.insert(file_data).inserted_id
     return 'ok'
         
     
