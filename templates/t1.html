@@ -65,7 +65,7 @@ var options = {
 		xValueType: "dateTime",
 		yValueFormatString: "###.00Wh",
 		showInLegend: true,
-		name: "IR Sensor",
+		name: "IRSensor",
 		dataPoints: dataPoints3
 	}]
 };
@@ -125,9 +125,9 @@ function updateChart(count) {
 	}
 
 	// updating legend text with  updated with y Value 
-	options.data[0].legendText = "Turbine 1 : " + yValue1 + "Wh";
-	options.data[1].legendText = "Turbine 2 : " + yValue2 + "Wh";
-	options.data[2].legendText = "Turbine 3 : " + yValue3 + "Wh";
+	options.data[0].legendText = "Accelerometer X : " + yValue1 + "Wh";
+	options.data[1].legendText = "Accelerometer Z : " + yValue2 + "Wh";
+	options.data[2].legendText = "IRSensor : " + yValue3 + "Wh";
 	$("#chartContainer").CanvasJSChart().render();
 }
 // generates first set of dataPoints 
