@@ -36,9 +36,9 @@
 	</div>
 	<script>
 		$(document).ready(function(){
-  			$("p").click(function(){
-			$(this).hide();
-			});
+			$.get( "https://practice42.herokuapp.com/fetch", function( data ) {
+					alert(data)
+				});
 		});
 	</script>
 </body>
