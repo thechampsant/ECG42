@@ -1,36 +1,12 @@
 import os
 from flask import Flask, request
 from collections import defaultdict
-from flask_pymongo import PyMongo
 import json    
 
 app = Flask(__name__)
 
 
 
-
-
-
-@app.route('/fetch')
-def myABC():
-    mongo = PyMongo(app, uri="mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs")
-    myList = []
-    x = mongo.db.sensorTest.find({"accelorometerx":{"$gt":70},"IRsensor":{"$gt":11}})
-    print(x)
-    for res in x:
-        print(res)
-        myList.append(res)
-    return json.dumps(myList)
-
-
-@app.route('/store')
-def myXYZ():
-    with open('result.json') as f:
-    file_data = json.load(f)
-    mongo = PyMongo(app, uri="mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs")
-    y = mongo.db.sensorTest.insert_many(file_data)
-    print(y)
-    return 'ok'
 
 @app.route("/xx")
 def hello():
