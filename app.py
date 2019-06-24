@@ -7,15 +7,13 @@ import json
 
 
 app = Flask(__name__)
-uri = "mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs"
-
-
 
 
 
 
 @app.route('/xx')
 def hello():
+    uri = "mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs"
     client = MongoClient(uri)
 
     return 'file_data'
