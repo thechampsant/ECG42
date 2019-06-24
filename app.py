@@ -1,13 +1,19 @@
 import os
 from flask import Flask,request, render_template
 from collections import defaultdict
+from flask_pymongo import PyMongo
 import json    
 
 app = Flask(__name__)
 app._static_folder = os.path.abspath("static/")
 
+app.config["MONGO_URI"] = "mongodb://heroku_14nz5659:fh9bbo96241au1jdcko1nuucqi@ds341837.mlab.com:41837/heroku_14nz5659"
+mongo = PyMongo(app)
 
-
+@app.route("/")
+def home_page():
+    online_users = mongo.db.users.insert_one({"name":"santosh"})
+    return 'ok'
 
 @app.route('/xx')
 def hello():
