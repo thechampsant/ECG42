@@ -16,6 +16,17 @@ def hello():
 @app.route('/mainpage')
 def tuna():
     return render_template("project.html")
+@app.route('/t1.html')
+def potholes():
+    return render_template("t1.html")
+
+@app.route('/t2.html')
+def chart():
+    return render_template("t2.html")
+
+@app.route('/t3.html')
+def mapi():
+    return render_template("t3.html")
 
 @app.route('/static/<path:filename>')
 def serve_static(filename):
