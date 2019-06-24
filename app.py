@@ -41,10 +41,10 @@ def myABC():
 #    if x:
 #        return 'x created'
 #    print(x)
-    for res in x:
-        myList.append(res)
+#    for res in x:
+#        myList.append(res)
         
-    return json.dumps(myList)
+    return json.dumps(x)
 
 
 @app.route('/mainpage')
