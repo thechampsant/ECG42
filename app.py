@@ -1,9 +1,9 @@
 import os
-from flask import Flask, request, render_template
+from flask import Flask,request, render_template
 from collections import defaultdict
 import json    
 
-app = Flask(__name__,template_folder='template')
+app = Flask(__name__, static_folder='/templates')
 
 
 
@@ -12,10 +12,12 @@ app = Flask(__name__,template_folder='template')
 def hello():
     return 'file_data'
 
-@app.route('/index')
-def index():
-    return render_template('project.html')
-
+@app.route('/tuna')
+def tuna():
+    return render_template("project.html")
+app.route('/tuna/<name>')
+def tunax(name):
+    return render_template(name)
 
 
 @app.route('/health')
