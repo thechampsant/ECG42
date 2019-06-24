@@ -27,6 +27,9 @@ def hello():
         
     if file_data:
         return json.dumps(file_data)
+    
+    sensor = db.file_data
+    sensor_id = posts.insert_one(sensor).inserted_id
         
     return 'ok'
         
