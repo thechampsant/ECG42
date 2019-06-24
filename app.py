@@ -33,7 +33,16 @@ def hello():
         
     return 'ok'
         
-    
+app.route('/fetch')
+def myABC():
+    myList = []
+    client = MongoClient('mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs')
+    db = client['heroku_pqsw7hfs']
+    x = db.file_data.find({"accelorometerx":{"$gt":70},"IRsensor":{"$gt":11}})
+   
+    for res in x:
+        myList.append(res)
+    return json.dumps(myList)
     
 
 @app.route('/mainpage')
