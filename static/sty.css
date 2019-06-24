@@ -41,9 +41,7 @@ div#container {
 	float: right;
 }
 
-ul#nav{
 
-}
 ul#nav li{
 	list-style: sidama;
 
@@ -99,7 +97,7 @@ div#box .box-panel {
 	font-size: 20;
 	padding: 15px;
 	margin-left: 25px;
-	background-color: #;
+	
     
 }
 
@@ -122,4 +120,3 @@ a.mobile:active{
 			}
 }
 
-}
