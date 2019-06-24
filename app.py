@@ -18,10 +18,12 @@ def hello():
         file_data = json.load(f)
     client = MongoClient('mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs')
     db = client['heroku_pqsw7hfs']
-    post = {"author": "Mike",
-            "text": "My first blog post!",
-            "tags": ["mongodb", "python", "pymongo"],
-            "date": datetime.datetime.utcnow()}
+#    post = {"author": "Mike",
+#            "text": "My first blog post!",
+#            "tags": ["mongodb", "python", "pymongo"],
+#            "date": datetime.datetime.utcnow()}
+    if file_data:
+        return json.dumps(file_data)
     
     posts = db.posts
     post_id = posts.insert_one(post).inserted_id
