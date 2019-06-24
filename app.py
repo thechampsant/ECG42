@@ -14,8 +14,7 @@ app = Flask(__name__)
 @app.route('/xx')
 def hello():
     client = MongoClient('mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs')
-    y = client.db.user.insert_one({"xx":"123"})
-    print(y)
+    db = client['heroku_pqsw7hfs']
     return 'ok'
 
 @app.route('/mainpage')
