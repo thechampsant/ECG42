@@ -31,6 +31,7 @@ def hello():
 
 @app.route('/fetch')
 def myABC():
+    myList=[]
     client = MongoClient('mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs')
     db = client['heroku_pqsw7hfs']
 #    if client:
@@ -42,10 +43,10 @@ def myABC():
 #    if x:
 #        return 'x created'
 #    print(x)
-#    for res in x:
-#        myList.append(res)
+    for res in x:
+        myList.append(res)
         
-    return json.dumps(x)
+    return json.dumps(myList)
 
 
 @app.route('/mainpage')
