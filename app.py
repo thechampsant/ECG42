@@ -9,14 +9,13 @@ import json
 
 app = Flask(__name__)
 
-client = MongoClient('mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs')
-db = client['heroku_pqsw7hfs']
 
 
-@app.route('/store')
+
+@app.route('/xx')
 def hello():
-#    client = MongoClient('mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs')
-#    db = client['heroku_pqsw7hfs']
+    client = MongoClient('mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs')
+    db = client['heroku_pqsw7hfs']
 #    post = {"author": "Mike",
 #            "text": "My first blog post!",
 #            "tags": ["mongodb", "python", "pymongo"],
@@ -29,7 +28,7 @@ def hello():
     if file_data:
         return json.dumps(file_data)
     
-    sensor = db.file_data
+    sensor = db.sensorList
     sensor_id = posts.insert_one(sensor).inserted_id
         
     return 'ok'
