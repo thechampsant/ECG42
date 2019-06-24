@@ -12,8 +12,8 @@ app = Flask(__name__)
 
 
 
-@app.route('/xx')
-def hello():
+@app.route('/store')
+def storeSensor():
     client = MongoClient('mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs')
     db = client['heroku_pqsw7hfs']
 #    post = {"author": "Mike",
@@ -29,11 +29,20 @@ def hello():
         return json.dumps(file_data)
     
     sensor = db.file_data
-    sensor_id = posts.insert_one(sensor).inserted_id
+    sensor_id = sensor.insert_one(sensor).inserted_id
         
     return 'ok'
         
-    
+@app.route('/fetch')
+def getSensor():
+    client = MongoClient('mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs')
+    db = client['heroku_pqsw7hfs']
+    x = db.sensorTest.find({"accelorometerx":{"$gt":70},"IRsensor":{"$gt":11}})
+    print(x)
+    for res in x:
+        print(res)
+        myList.append(res)
+    return json.dumps(myList)    
     
 
 @app.route('/mainpage')
