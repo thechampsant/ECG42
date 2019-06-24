@@ -24,10 +24,9 @@ def hello():
 #    post_id = posts.insert_one(post).inserted_id
     with open('result.json') as f:
         file_data = json.load(f)
-    if file_data:
-        dataSense = db.dataSense
-        dataid = dataSense.insert_one(file_data).inserted_id
-        
+    
+    xyz = db.xyz
+    post_id = xyz.insert_many(file_data).inserted_id
     return 'ok'
         
     
