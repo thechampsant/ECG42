@@ -24,6 +24,9 @@ def hello():
 #    post_id = posts.insert_one(post).inserted_id
     with open('result.json') as f:
         file_data = json.load(f)
+        
+    if file_data:
+        return 'json loaded'
         y = db.file_data.insert_many(file_data).imserted_id
     return 'ok'
         
