@@ -28,8 +28,8 @@ def hello():
     if file_data:
         return json.dumps(file_data)
     
-    sensor = db.sensorData
-    sensor_id = sensor.insert_one(file_data).inserted_id
+    sensorData = db.sensorData
+    sensor_id = sensorData.insert_one(file_data).inserted_id
         
     return 'ok'
         
