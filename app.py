@@ -24,24 +24,12 @@ def hello():
 #    post_id = posts.insert_one(post).inserted_id
     with open('result.json') as f:
         file_data = json.load(f)
-        
-    
     
     posts = db.posts
     post_id = posts.insert_one(file_data).inserted_id
-        
     return 'ok'
         
-app.route('/fetch')
-def myABC():
-    myList = []
-    client = MongoClient('mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs')
-    db = client['heroku_pqsw7hfs']
-    x = db.file_data.find({"accelorometerx":{"$gt":70},"IRsensor":{"$gt":11}})
-   
-    for res in x:
-        myList.append(res)
-    return json.dumps(myList)
+    
     
 
 @app.route('/mainpage')
