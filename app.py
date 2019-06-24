@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 
 
-@app.route('/xx')
+@app.route('/store')
 def hello():
     with open('result.json') as f:
         file_data = json.load(f)
@@ -28,6 +28,18 @@ def hello():
     post_id = posts.insert_many(file_data).inserted_id
     
     return 'ok'
+
+@app.route('/fetch')
+def myABC():
+    client = MongoClient('mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs')
+    db = client['heroku_pqsw7hfs']
+    x = db.posts.find({"accelorometerx":{"$gt":70},"IRsensor":{"$gt":11}})
+    print(x)
+    for res in x:
+        print(res)
+        myList.append(res)
+    return json.dumps(myList)
+
 
 @app.route('/mainpage')
 def tuna():
