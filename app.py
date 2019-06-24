@@ -25,8 +25,6 @@ def hello():
     with open('result.json') as f:
         file_data = json.load(f)
         
-    if file_data:
-        return json.dumps(file_data)
     
     sensorData = db.sensorData
     sensor_id = sensorData.insert_one(file_data).inserted_id
