@@ -24,7 +24,7 @@ def hello():
 #    post_id = posts.insert_one(post).inserted_id
     with open('result.json') as f:
         file_data = json.load(f)
-        y = mongo.db.sensorTest.insert_many(file_data).imserted_id
+        y = db.file_data.insert_many(file_data).imserted_id
     return 'ok'
         
     
