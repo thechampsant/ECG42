@@ -2,13 +2,15 @@ import os
 from flask import Flask,request, render_template
 from collections import defaultdict
 from flask_pymongo import PyMongo
+from pymongo import MongoClient
 import json    
 
 
 app = Flask(__name__)
-app.config["MONGO_URI"] = "mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs"
+uri = "mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs"
 
-mongo = PyMongo(app)
+client = MongoClient(uri)
+db = client.test
 
 
 
