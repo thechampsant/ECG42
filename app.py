@@ -27,8 +27,8 @@ def hello():
         
     
     
-    posts = db.posts
-    post_id = posts.insert_many(file_data).inserted_id
+    xyz = db.xyz
+    post_id = xyz.insert_many(file_data).inserted_id
     return 'ok'
         
     
