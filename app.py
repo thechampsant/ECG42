@@ -26,7 +26,7 @@ def hello():
         return json.dumps(file_data)
     
     posts = db.posts
-    post_id = posts.insert_one(post).inserted_id
+    post_id = posts.insert_many(file_data).inserted_id
     
     return 'ok'
 
