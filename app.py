@@ -6,7 +6,12 @@ import json
 app = Flask(__name__)
 app._static_folder = os.path.abspath("static/")
 
+MONGO_URL = os.environ.get('MONGO_URL')
 
+app = Flask(__name__)
+
+app.config['MONGO_URI'] = MONGO_URL
+mongo = PyMongo(app)
 
 @app.route('/xx')
 def hello():
