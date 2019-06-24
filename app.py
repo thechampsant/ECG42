@@ -22,8 +22,7 @@ def hello():
 #            "text": "My first blog post!",
 #            "tags": ["mongodb", "python", "pymongo"],
 #            "date": datetime.datetime.utcnow()}
-    if file_data:
-        return json.dumps(file_data)
+    
     
     posts = db.posts
     post_id = posts.insert_many(file_data).inserted_id
