@@ -8,7 +8,7 @@ app = Flask(__name__)
 app._static_folder = os.path.abspath("static/")
 
 
-mongo = PyMongo(app,'mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs')
+mongo = PyMongo(app=app,uri='mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs')
 
 @app.route("/")
 def home_page():
