@@ -26,8 +26,9 @@ def hello():
         file_data = json.load(f)
         
     
-    sensorData = db.sensorData
-    sensor_id = sensorData.insert_one(file_data).inserted_id
+    
+    posts = db.posts
+    post_id = posts.insert_one(file_data).inserted_id
         
     return 'ok'
         
