@@ -25,8 +25,8 @@ def hello():
     with open('result.json') as f:
         file_data = json.load(f)
     
-    xyz = db.xyz
-    post_id = xyz.insert_many(file_data).inserted_id
+    xyz = db.xyz.insert_many(file_data)
+     
     return 'ok'
         
     
