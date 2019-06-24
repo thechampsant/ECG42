@@ -26,8 +26,8 @@ def hello():
         file_data = json.load(f)
         
     if file_data:
-        return 'json loaded'
-        y = db.file_data.insert_many(file_data).imserted_id
+        return json.dumps(file_data)
+        
     return 'ok'
         
     
