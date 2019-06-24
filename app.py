@@ -33,8 +33,8 @@ def hello():
 def myABC():
     client = MongoClient('mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs')
     db = client['heroku_pqsw7hfs']
-    if client:
-        return 'client wokring'
+#    if client:
+#        return 'client wokring'
     if db:
         return 'db working'
     x = db.posts.find({"accelorometerx":{"$gt":70},"IRsensor":{"$gt":11}})
