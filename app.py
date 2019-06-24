@@ -35,9 +35,11 @@ def myABC():
     db = client['heroku_pqsw7hfs']
 #    if client:
 #        return 'client wokring'
-    if db:
-        return 'db working'
+#    if db:
+#        return 'db working'
     x = db.posts.find({"accelorometerx":{"$gt":70},"IRsensor":{"$gt":11}})
+    if x:
+        return 'x created'
     print(x)
     for res in x:
         print(res)
