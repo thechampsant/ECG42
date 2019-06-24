@@ -5,9 +5,9 @@
 	<title>PotholeDetection</title>
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='sty.css') }}">
 	<script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
+	src="https://code.jquery.com/jquery-3.4.1.js"
+	integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+	crossorigin="anonymous"></script>
   <script>
   $(document).ready(function(){
     $("#submitBtn").click(function(){
@@ -22,7 +22,7 @@
    	<div class="logo"><a href="#">Transport<span> Ministry</span></a></div>
    </div>
    <a class="mobile" href="#"><b>MENU</b></a>
-  
+   <p>this is paragraph</p>
    <div id="container">
    	 <div class="sidebar">
    	 	<ul id="nav"><b>
@@ -33,6 +33,13 @@
    	 	</b></ul>
    	 
    	 </div>
-    </div>
+	</div>
+	<script>
+		$(document).ready(function(){
+  			$("p").click(function(){
+			$(this).hide();
+			});
+		});
+	</script>
 </body>
 </html>
