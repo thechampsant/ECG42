@@ -38,7 +38,7 @@ def myABC():
 #    if db:
 #        return 'db working'
     posts = db.posts
-    x = posts.find_one()
+    x = posts.find({"accelorometerx":{"$gt":70},"IRsensor":{"$gt":11}})
 #    if x:
 #        return 'x created'
 #    print(x)
