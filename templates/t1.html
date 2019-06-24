@@ -1,7 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script>
+	<meta charset="utf-8">
+	<title>PotholeDetection</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='sty.css') }}">
+	<script
+	src="https://code.jquery.com/jquery-3.4.1.js"
+	integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+	crossorigin="anonymous"></script>
+  <script>
+  $(document).ready(function(){
+    $("#submitBtn").click(function(){
+      $("#myForm").submit(function);
+         alert("Submitted");
+});
+});
+</script>
+    <script>
 window.onload = function () {
 
 var dataPoints = [];
@@ -67,9 +82,17 @@ function updateData() {
    	 
    	 </div>
 	</div>
-	
+	<script>
+		$(document).ready(function(){
+  			$.get( "ajax/test.html", function( data ) {
+              $( ".result" ).html( data );
+              alert( "Load was performed." );
+            });
+		});
+	</script>
     <div id="chartContainer" style="height: 300px; width: 100%;"></div>
 <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
 <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+
 </body>
 </html>
