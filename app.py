@@ -16,13 +16,18 @@ app = Flask(__name__)
 def hello():
     client = MongoClient('mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs')
     db = client['heroku_pqsw7hfs']
-    post = {"author": "Mike",
-            "text": "My first blog post!",
-            "tags": ["mongodb", "python", "pymongo"],
-            "date": datetime.datetime.utcnow()}
-    posts = db.posts
-    post_id = posts.insert_one(post).inserted_id
-   
+#    post = {"author": "Mike",
+#            "text": "My first blog post!",
+#            "tags": ["mongodb", "python", "pymongo"],
+#            "date": datetime.datetime.utcnow()}
+#    posts = db.posts
+#    post_id = posts.insert_one(post).inserted_id
+    with open('result.json') as f:
+        file_data = json.load(f)
+    if file_data:
+        dataSense = db.dataSense
+        dataid = dataSense.insert_one(file_data).inserted_id
+        
     return 'ok'
         
     
