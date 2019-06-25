@@ -28,9 +28,7 @@
            $(document).ready(function(){
                 $.get( "https://practice42.herokuapp.com/fetch", function( data ) {
                     var t = JSON.parse(data)
-                    for (var k in t){
-                        alert(k("latitude"));
-                    }
+                    alert(t.latitude);
                    
                 });
            });
