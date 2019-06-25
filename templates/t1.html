@@ -149,7 +149,7 @@ setInterval(function () { updateChart() }, updateInterval);
      <script>
         $(document).ready(function(){
            $.get("http://practice42.herokuapp.com/fetch", function(data, status){
-                document.getElementById("t").innerText = data;
+               alert(data);
           }); 
         });
     </script>
