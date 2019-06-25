@@ -29,10 +29,11 @@
                 $.get( "https://practice42.herokuapp.com/fetch", function( data ) {
                    var x = data["latitude"];
                     for(var x in data){
-                        var y = x["latitude"];
+                        var z = data[x]
+                        var za = z["latitude"]
                        
                     }
-                     document.getElementById("t").innerHTML += y +"</br>";
+                     document.getElementById("t").innerHTML += za +"</br>";
                        
                 });
            });
