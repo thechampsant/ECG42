@@ -146,16 +146,17 @@ setInterval(function () { updateChart() }, updateInterval);
     </div>
     
     <div id="chartContainer" style="height: 300px; width: 50%;"></div>
-    <p id="t"></p>
-    <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
-    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
-    <script>
+     <script>
         $(document).ready(function(){
            $.get("http://practice42.herokuapp.com/fetch", function(data, status){
-            document.getElementById("t").innerText = data;
+                document.getElementById("t").innerText = data;
           }); 
         });
     </script>
+    <p id="t"></p>
+    <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+   
 
 </body>
 </html>
