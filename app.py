@@ -4,7 +4,6 @@ from collections import defaultdict
 from flask_pymongo import PyMongo
 from pymongo import MongoClient
 import datetime
-import csv
 import json    
 
 
@@ -48,27 +47,6 @@ def myABC():
         myList.append(res)
         
     return json.dumps(myList)
-
-@app.route('/csv'):
-    myList=[]
-    client = MongoClient('mongodb://heroku_pqsw7hfs:n9ebtdb84uiv8ugh3juo2hamqr@ds241977.mlab.com:41977/heroku_pqsw7hfs')
-    db = client['heroku_pqsw7hfs']
-#    if client:
-#        return 'client wokring'
-#    if db:
-#        return 'db working'
-    posts = db.posts
-    x = posts.find({"accelorometerx":{"$gt":30},"IRsensor":{"$gt":10}})
-#    if x:
-#        return 'x created'
-#    print(x)
-    for res in x:
-        myList.append(res)
-        
-    writer = csv.writer(myList)
-
-        
-    return writer
     
 
 @app.route('/mainpage')
