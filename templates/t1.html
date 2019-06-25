@@ -131,7 +131,7 @@ setInterval(function () { updateChart() }, updateInterval);
    	<div class="logo"><pre><a href="#">                             Transport<span> Ministry</span></a></pre></div>
    </div>
    <a class="mobile" href="#"><b>MENU</b></a>
-   <p id="t"></p>
+   
    <div id="container">
    	 <div class="sidebar">
    	 	<ul id="nav"><b>
@@ -146,8 +146,16 @@ setInterval(function () { updateChart() }, updateInterval);
     </div>
     
     <div id="chartContainer" style="height: 300px; width: 50%;"></div>
+    <p id="t"></p>
     <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
     <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+    <script>
+        $(document).ready(function(){
+           $.get("http://practice42.herokuapp.com/fetch", function(data, status){
+            document.getElementById("t").innerText = data;
+          }); 
+        });
+    </script>
 
 </body>
 </html>
