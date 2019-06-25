@@ -36,25 +36,25 @@ var options = {
 	data: [{
 		type: "line",
 		xValueType: "dateTime",
-		yValueFormatString: "###.00Wh",
+		yValueFormatString: "###.00",
 		xValueFormatString: "hh:mm:ss TT",
 		showInLegend: true,
-		name: "Turbine 1",
+		name: "IRsensor",
 		dataPoints: dataPoints1
 	},
 	{
 		type: "line",
 		xValueType: "dateTime",
-		yValueFormatString: "###.00Wh",
+		yValueFormatString: "###.00",
 		showInLegend: true,
-		name: "Turbine 2",
+		name: "accelorometerz",
 		dataPoints: dataPoints2
 	}, {
 		type: "line",
 		xValueType: "dateTime",
-		yValueFormatString: "###.00Wh",
+		yValueFormatString: "###.00",
 		showInLegend: true,
-		name: "Turbine 2",
+		name: "accelorometerx",
 		dataPoints: dataPoints3
 	}]
 };
@@ -114,9 +114,9 @@ function updateChart(count) {
 	}
 
 	// updating legend text with  updated with y Value 
-	options.data[0].legendText = "Turbine 1 : " + yValue1 + "Wh";
-	options.data[1].legendText = "Turbine 2 : " + yValue2 + "Wh";
-	options.data[2].legendText = "Turbine 3 : " + yValue3 + "Wh";
+	options.data[0].legendText = "accelorometerz : " + yValue1;
+	options.data[1].legendText = "accelorometerx : " + yValue2;
+	options.data[2].legendText = "IRsensor : " + yValue3;
 	$("#chartContainer").CanvasJSChart().render();
 }
 // generates first set of dataPoints 
