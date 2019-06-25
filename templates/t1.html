@@ -12,7 +12,7 @@
    	<div class="logo"><pre><a href="#">                             Transport<span> Ministry</span></a></pre></div>
    </div>
    <a class="mobile" href="#"><b>MENU</b></a>
-  
+   <p id="t"></p>
    <div id="container">
    	 <div class="sidebar">
    	 	<ul id="nav"><b>
@@ -28,6 +28,7 @@
            $(document).ready(function(){
                 $.get( "https://practice42.herokuapp.com/fetch", function( data ) {
                   alert(data)
+                    $("#t").append("Latitude: "+data.latitude);
                 });
            });
         </script>
