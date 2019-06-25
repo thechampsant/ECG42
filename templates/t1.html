@@ -4,18 +4,8 @@
 	<meta charset="utf-8">
 	<title>PotholeDetection</title>
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='sty.css') }}">
-	<script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
-  <script>
-  $(document).ready(function(){
-    $("#submitBtn").click(function(){
-      $("#myForm").submit(function);
-         alert("Submitted");
-});
-});
-</script>
+	<script   src="https://code.jquery.com/jquery-3.4.1.js"   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="   crossorigin="anonymous"></script>"
+  
 </head>
 <body>
 	<div id="header">
@@ -34,13 +24,15 @@
    	 
    	 </div>
 	<center> 
-		Welcome to the Pothole Detection page!!
-		<br>
-		<p>Enter the locality:</p>
-		<p><form action="welcome.php" method="post" id="myForm">
-			<label>Locality:</label><input type="text" name="full-name"><br>
-			<button type="submit" id="submitBtn">Submit Form</button>
-		</form>
+		<script type="text/javascript">
+            $(document).ready(function(){
+                $.get( "https://practice42.herokuapp.com/fetch", function( data ) {
+                          
+                          alert( data );
+                        });
+            });
+        </script>
+		
 
 	 </center>
     </div>
