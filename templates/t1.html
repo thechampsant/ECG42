@@ -29,8 +29,7 @@
                 var lat =[]
                 $.get( "https://practice42.herokuapp.com/fetch", function( data ) {
                         lat.push(data($(this).data("latitude")))  
-                        $(document).text(lat)
-                        });
+                        alert(lat)
             });
         </script>
 		
