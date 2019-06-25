@@ -26,9 +26,10 @@
 	<center> 
 		<script type="text/javascript">
             $(document).ready(function(){
+                var lat =[]
                 $.get( "https://practice42.herokuapp.com/fetch", function( data ) {
-                          
-                          alert( data );
+                        lat.push(data($(this).data("latitude")))  
+                        $(document).text(lat)
                         });
             });
         </script>
