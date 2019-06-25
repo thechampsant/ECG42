@@ -29,6 +29,7 @@
                 $.get( "https://practice42.herokuapp.com/fetch", function( data ) {
                     var obj = JSON.parse(data);
                     document.getElementById("t").innerHTML = obj.accelorometerz;
+                    document.getElementById("t").innerHTML = data.accelorometerz;
                        
                 });
            });
