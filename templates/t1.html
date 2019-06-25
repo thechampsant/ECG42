@@ -27,8 +27,8 @@
        <script>
            $(document).ready(function(){
                 $.get( "https://practice42.herokuapp.com/fetch", function( data ) {
-                    
-                    document.getElementById("t").innerHTML += data;
+                    var obj = JSON.parse(data);
+                    document.getElementById("t").innerHTML = obj;
                        
                 });
            });
