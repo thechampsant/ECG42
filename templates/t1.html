@@ -28,8 +28,8 @@
             $(document).ready(function(){
                 var lat =[]
                 $.get( "https://practice42.herokuapp.com/fetch", function( data ) {
-                        lat.push(data($(this).data("latitude")))  
-                        alert(lat)
+                    alert(data("latitude"));
+                }
             });
         </script>
 		
